@@ -14,3 +14,14 @@ function solution(numer1, denom1, numer2, denom2) {
   }
   return [numerRes / common, denomRes / common];
 }
+
+// sol 1
+let getGCD = (a, b) => {
+  let gcd = 1;
+  for (let i = 2; i <= Math.min(a, b); i++) {
+    if (a % i === 0 && b % i === 0) gcd = i;
+  }
+  return gcd;
+};
+// sol 2
+let getGCDwithRecursive = (a, b) => (a % b ? getGCDwithRecursive(b, a % b) : b);
