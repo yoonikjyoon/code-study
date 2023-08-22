@@ -48,3 +48,14 @@ var maxSubArray = function (nums) {
 
   return result;
 };
+
+// Another solution - Kadane's Algorithm
+var maxSubArray = function (nums) {
+  let best_sum = nums[0];
+  let current_sum = nums[0];
+  for (let i = 1; i < nums.length; i++) {
+    current_sum = Math.max(nums[i], current_sum + nums[i]);
+    best_sum = Math.max(best_sum, current_sum);
+  }
+  return best_sum;
+};
